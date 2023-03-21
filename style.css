@@ -1,7 +1,25 @@
 #decimal{
     background-color: blueviolet;
-    width: 25%;
+    width: 29%;
     float: left;
-    height: 25%;
-    margin: auto;
+    height: 10%;
+    padding: 9%;
+    text-align: center;
+    position: absolute;
+}
+#btn_Convert{
+    padding: 5%;
+    background-color: goldenrod;
+    border: none;
+    border-radius: 8%;
+}
+
+#octal{
+    background-color: aquamarine;
+    width: 29%;
+    float: right;
+    height: 10%;
+    padding: 9%;
+    text-align: center;
+    position: relative;
 }
