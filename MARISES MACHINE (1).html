@@ -13,7 +13,20 @@
 <body>
         <div class="container">
                 <div id="decimal">
-                        <h3 style="margin: 0 auto;">DECIMAL</h3>
+<<<<<<< HEAD
+                        <h4 style="margin: 0 auto;">Decimal</h3>
+                        <br>
+                        <input id="demo1" type="text" placeholder="Digite o valor em decimal">
+                        <br><br>
+                        <button onclick="converter()" id="btn_Convert">converter</button>
+                </div>
+
+                <div id="octal">
+                        <h2 style="margin: 0 auto;">Octal</h2>
+                        <br><br>
+                        <div id="demo2"></div>
+=======
+                        <h3 style="margin: 0 auto;">decimal</h3>
                         <input id="demo1" type="text" placeholder="digite o valor em decimal">
                         <br><br>
                         <button onclick="converter()" id="btn_Convert" class="btn_Convert">converter</button>
@@ -26,6 +39,7 @@
                         <h2 style="margin: 0 auto;">Octal</h2>
                         <div id="demo2"></div>
                         <img onclick="clickSonic()" class="char" id="sonic" src="assets/sonic.gif">
+>>>>>>> add3493687fa6ea19dfafb61e963df748268629b
                 </div>
 
                 <div id="hexadecimal">
@@ -50,7 +64,7 @@
 
                         let octal = decimal.toString(8);
 
-                        let hexadecimal = decimal.toString(16);
+                        let hexadecimal = decimal.toString(16).toUpperCase();
 
                         let binaria = decimal.toString(2);
 

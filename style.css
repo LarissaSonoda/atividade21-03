@@ -1,6 +1,9 @@
+<<<<<<< HEAD
+=======
 body{
     background-color: rgb(39, 39, 39);
 }
+>>>>>>> add3493687fa6ea19dfafb61e963df748268629b
 .container{
     display: flex;
     flex-wrap: wrap;
@@ -43,6 +46,27 @@ body{
     background-size: cover;
     background-position: bottom;
     font-family: Mario;
+<<<<<<< HEAD
+    width: 32.5%;
+    margin-right: 8px;
+    float: left;
+    height: 9.8%;
+    padding: 8%;
+    text-align: center;
+    position: relative;
+    align-items: baseline;
+}
+#demo1{
+    border-radius: 6%;
+    border: none;
+}
+#btn_Convert{
+    padding: 2%;
+    background-color: goldenrod;
+    border: none;
+    font-family: Mario;
+    border-radius: 4%;
+=======
 }
 #decimal input{
     border: none;
@@ -63,6 +87,7 @@ body{
     color: white;
     text-shadow: 2px 2px black;
     cursor: pointer;
+>>>>>>> add3493687fa6ea19dfafb61e963df748268629b
 }
 
 #octal{
@@ -70,6 +95,36 @@ body{
     background-size: cover;
     background-position: bottom;
     font-family: Sonic;
+<<<<<<< HEAD
+    color: #fff;
+    width: 32.5%;
+    float: right;
+    height: 40%;
+    padding: 8%;
+    text-align: center;
+    position: relative;
+    align-items: baseline;
+}
+#hexadecimal{
+    background-color: green;
+    width: 32.5%;
+    float: left;
+    height: 10%;
+    padding: 8%;
+    margin: 1px;
+    text-align: center;
+    align-items: end;
+}
+#binario{
+    background-color: green;
+    width: 32.5%;
+    float: right;
+    height: 10%;
+    padding: 8%;
+    margin: 1px;
+    text-align: center;
+    align-items: end;
+=======
 }
 #octal h2{
     background:linear-gradient(rgb(92, 92, 24),rgb(231, 231, 6));
@@ -94,6 +149,7 @@ body{
     background-position: center;
     font-family: DK;
     color: white;
+>>>>>>> add3493687fa6ea19dfafb61e963df748268629b
 }
 .char{
     height: 100px;
