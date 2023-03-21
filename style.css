@@ -1,7 +1,10 @@
-
+body{
+    background-color: black;
+}
 .container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 @font-face {
@@ -21,20 +24,32 @@
     src: url("assets/kong font.ttf");
 }
 
+.container div{
+    width: 600px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+#decimal div, #octal div, #hexadecimal div, #binario div{
+    color: white;
+    font-size: 80px !important;
+}
 #decimal{
     background-image: url("assets/mario bg.jpg");
     background-size: cover;
     background-position: bottom;
     font-family: Mario;
-
-    width: 31.5%;
-    margin-right: 8px;
-    float: left;
-    height: 9.8%;
-    padding: 8%;
-    text-align: center;
-    position: relative;
-    align-items: baseline;
+}
+#decimal input{
+    border: none;
+    margin: 10px 0 0 0;
+    font-family:Mario;
+    height: 10%;
+    width: 80%;
 }
 #btn_Convert{
     padding: 2%;
@@ -48,32 +63,34 @@
     background-size: cover;
     background-position: bottom;
     font-family: Sonic;
-
-    width: 31.5%;
-    float: right;
-    height: 20%;
-    padding: 8%;
-    text-align: center;
-    position: relative;
-    align-items: baseline;
 }
 #hexadecimal{
-    background-color: green;
-    width: 31.5%;
-    float: left;
-    height: 10%;
-    padding: 8%;
-    margin: 1px;
-    text-align: center;
-    align-items: end;
+    background-image: url("assets/ryu bg.jpg");
+    background-size: cover;
+    background-position: bottom;
+    font-family: SF;
 }
 #binario{
-    background-color: green;
-    width: 31.5%;
-    float: right;
-    height: 10%;
-    padding: 8%;
-    margin: 1px;
-    text-align: center;
-    align-items: end;
+    background-image: url("assets/kong bg.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: DK;
+}
+.char{
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+}
+#mario{
+    top: 35px;
+}
+#sonic{
+    bottom: 20px;
+}
+#ryu{
+    height: 500px;
+}
+#dk{
+    bottom: 285px;
+    right: 100px;
 }
