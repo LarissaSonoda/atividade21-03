@@ -13,10 +13,10 @@
 <body>
         <div class="container">
                 <div id="decimal">
-                        <h3 style="margin: 0 auto;">Decimal</h3>
+                        <h3 style="margin: 0 auto;">decimal</h3>
                         <input id="demo1" type="text" placeholder="digite o valor em decimal">
                         <br><br>
-                        <button onclick="converter()" id="btn_Convert">Converter</button>
+                        <button onclick="converter()" id="btn_Convert" class="btn_Convert">converter</button>
                         <br>
                         <img onclick="clickMario()" class="char" id="mario" src="assets/mario.gif">
                 </div>
@@ -63,7 +63,12 @@
                         document.getElementById("demo2").innerHTML = ` ${octal}`;
                         document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
                         document.getElementById("demo4").innerHTML = ` ${binaria}`;
-
+                        
+                        btn_Convert.style = "background-color:rgb(131, 95, 3);color:lightgrey;";
+                        var sfx = new Audio("assets/coin.mp3");
+                        sfx.volume = 0.2;
+                        sfx.play();
+                        setTimeout(()=>btn_Convert.style = "background-color:goldenrod;color:white;",250);
                 }
 
                 function aparecer_bin() {
