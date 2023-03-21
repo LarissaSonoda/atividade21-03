@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Conversor Gamer</title>
+        <title>Game's Machine</title>
         <link rel="stylesheet" href="style.css">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
@@ -13,6 +13,7 @@
 <body>
         <div class="container">
                 <div id="decimal">
+<<<<<<< HEAD
                         <h4 style="margin: 0 auto;">Decimal</h3>
                         <br>
                         <input id="demo1" type="text" placeholder="Digite o valor em decimal">
@@ -24,25 +25,37 @@
                         <h2 style="margin: 0 auto;">Octal</h2>
                         <br><br>
                         <div id="demo2"></div>
+=======
+                        <h3 style="margin: 0 auto;">decimal</h3>
+                        <input id="demo1" type="text" placeholder="digite o valor em decimal">
+                        <br><br>
+                        <button onclick="converter()" id="btn_Convert" class="btn_Convert">converter</button>
+                        <br>
+                        <img onclick="clickMario()" class="char" id="mario" src="assets/mario.gif">
+                </div>
+
+
+                <div id="octal">
+                        <h2 style="margin: 0 auto;">Octal</h2>
+                        <div id="demo2"></div>
+                        <img onclick="clickSonic()" class="char" id="sonic" src="assets/sonic.gif">
+>>>>>>> add3493687fa6ea19dfafb61e963df748268629b
                 </div>
 
                 <div id="hexadecimal">
                         <h2 style="margin: 0 auto;">Hexadecimal</h2>
                         <br><br>
                         <div id="demo3"></div>
+                        <img onclick="clickRyu()" class="char" id="ryu" src="assets/ryu.gif">
                 </div>
 
                 <div id="binario">
-                        <h2 style="margin: 0 auto;">Binário</h2>
+                        <h2 style="margin: 0 auto;">Binario</h2>
                         <br><br>
                         <div id="demo4"></div>
+                        <img onclick="clickDK()" class="char" id="dk" src="assets/kong.png">
                 </div>
-
-
-
         </div>
-
-
         <script>
 
                 function converter() {
@@ -64,7 +77,12 @@
                         document.getElementById("demo2").innerHTML = ` ${octal}`;
                         document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
                         document.getElementById("demo4").innerHTML = ` ${binaria}`;
-
+                        
+                        btn_Convert.style = "background-color:rgb(131, 95, 3);color:lightgrey;";
+                        var sfx = new Audio("assets/coin.mp3");
+                        sfx.volume = 0.2;
+                        sfx.play();
+                        setTimeout(()=>btn_Convert.style = "background-color:goldenrod;color:white;",250);
                 }
 
                 function aparecer_bin() {
@@ -77,6 +95,35 @@
 
                 function aparecer_octal() {
                         demo2.style.display = 'block'
+                }
+
+                var mario = document.getElementById("mario");
+                var sonic = document.getElementById("sonic");
+                var ryu = document.getElementById("ryu");
+                var dk = document.getElementById("dk");
+                function clickMario(){
+                        var sfx =  new Audio("assets/mario sfx.mp3");
+                        sfx.play();
+                        mario.src = "assets/mario click.gif";
+                        setTimeout(()=>mario.src = "assets/mario.gif",2000);
+                }
+                function clickSonic(){
+                        var sfx =  new Audio("assets/sonic sfx.mp3");
+                        sfx.play();
+                        sonic.src = "assets/sonic click.gif";
+                        setTimeout(()=>sonic.src = "assets/sonic.gif",500);
+                }
+                function clickRyu(){
+                        var sfx =  new Audio("assets/ryu sfx.mp3");
+                        sfx.play();
+                        ryu.src = "assets/ryu click.gif";
+                        setTimeout(()=>ryu.src = "assets/ryu.gif",1000);
+                }
+                function clickDK(){
+                        var sfx =  new Audio("assets/kong sfx.mp3");
+                        sfx.play();
+                        dk.src = "assets/kong click.gif";
+                        setTimeout(()=>dk.src = "assets/kong.png",2500);
                 }
         </script>
 </body>

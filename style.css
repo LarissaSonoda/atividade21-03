@@ -1,6 +1,13 @@
+<<<<<<< HEAD
+=======
+body{
+    background-color: rgb(39, 39, 39);
+}
+>>>>>>> add3493687fa6ea19dfafb61e963df748268629b
 .container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 @font-face {
@@ -20,11 +27,26 @@
     src: url("assets/kong font.ttf");
 }
 
+.container div{
+    width: 600px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+#decimal div, #octal div, #hexadecimal div, #binario div{
+    color: white;
+    font-size: 80px !important;
+}
 #decimal{
     background-image: url("assets/mario bg.jpg");
     background-size: cover;
     background-position: bottom;
     font-family: Mario;
+<<<<<<< HEAD
     width: 32.5%;
     margin-right: 8px;
     float: left;
@@ -44,6 +66,28 @@
     border: none;
     font-family: Mario;
     border-radius: 4%;
+=======
+}
+#decimal input{
+    border: none;
+    margin: 10px 0 0 0;
+    font-family:Mario;
+    height: 10%;
+    width: 80%;
+    padding: 5px 10px;
+}
+
+#btn_Convert{
+    padding: 2%;
+    background-color: goldenrod;
+    border: solid white;
+    border-width: 2.5px 0 0 2.5px;
+    outline: solid black 2.5px;
+    font-family: Mario;
+    color: white;
+    text-shadow: 2px 2px black;
+    cursor: pointer;
+>>>>>>> add3493687fa6ea19dfafb61e963df748268629b
 }
 
 #octal{
@@ -51,6 +95,7 @@
     background-size: cover;
     background-position: bottom;
     font-family: Sonic;
+<<<<<<< HEAD
     color: #fff;
     width: 32.5%;
     float: right;
@@ -79,4 +124,37 @@
     margin: 1px;
     text-align: center;
     align-items: end;
+=======
+}
+#hexadecimal{
+    background-image: url("assets/ryu bg.jpg");
+    background-size: cover;
+    background-position: bottom;
+    font-family: SF;
+}
+#binario{
+    background-image: url("assets/kong bg.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: DK;
+    color: white;
+>>>>>>> add3493687fa6ea19dfafb61e963df748268629b
+}
+.char{
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+}
+#mario{
+    top: 35px;
+}
+#sonic{
+    bottom: 20px;
+}
+#ryu{
+    height: 500px;
+}
+#dk{
+    bottom: 285px;
+    right: 100px;
 }
