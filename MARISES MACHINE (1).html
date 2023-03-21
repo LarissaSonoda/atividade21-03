@@ -13,27 +13,12 @@
 <body>
         <div class="container">
                 <div id="decimal">
-                        <h3 style="margin: 0 auto;">Decimal</h3>
+                        <h4 style="margin: 0 auto;">Decimal</h3>
+                        <br>
                         <input id="demo1" type="text" placeholder="Digite o valor em decimal">
                         <br><br>
-                        <button onclick="converter()" id="btn_Convert">Converter</button>
+                        <button onclick="converter()" id="btn_Convert">converter</button>
                 </div>
-
-                <div id="octal">
-                        <h2 style="margin: 0 auto;">Octal</h2>
-                        <br><br>
-                        <div id="demo2"></div>
-                </div>
-
-
-                <!-- h1>Game's Machine</h1-->
-                <div id="decimal">
-                        <h3 style="margin: 0 auto;">Decimal</h3>
-                        <input id="demo1" type="text" placeholder="Digite o valor em decimal">
-                        <br><br>
-                        <button onclick="converter()" id="btn_Convert">Converter</button>
-                </div>
-
 
                 <div id="octal">
                         <h2 style="margin: 0 auto;">Octal</h2>
@@ -66,7 +51,7 @@
 
                         let octal = decimal.toString(8);
 
-                        let hexadecimal = decimal.toString(16);
+                        let hexadecimal = decimal.toString(16).toUpperCase();
 
                         let binaria = decimal.toString(2);
 
