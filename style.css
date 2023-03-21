@@ -1,5 +1,26 @@
+@font-face {
+    font-family: Mario;
+    src: url("assets/mario font.ttf");
+}
+@font-face {
+    font-family: Sonic;
+    src: url("assets/sonic font.TTF");
+}
+@font-face {
+    font-family: SF;
+    src: url("assets/ryu font.ttf");
+}
+@font-face {
+    font-family: DK;
+    src: url("assets/kong font.ttf");
+}
+
 #decimal{
-    background-color: blueviolet;
+    background-image: url("assets/mario bg.jpg");
+    background-size: cover;
+    background-position: bottom;
+    font-family: Mario;
+
     width: 31.5%;
     float: left;
     height: 10%;
@@ -15,7 +36,11 @@
 }
 
 #octal{
-    background-color: aquamarine;
+    background-image: url("assets/sonic bg.gif");
+    background-size: cover;
+    background-position: bottom;
+    font-family: Sonic;
+
     width: 31.5%;
     float: right;
     height: 10%;
