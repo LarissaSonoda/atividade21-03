@@ -1,12 +1,3 @@
-body{
-    background-color: rgb(39, 39, 39);
-}
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 @font-face {
     font-family: Mario;
     src: url("assets/mario font.ttf");
@@ -36,21 +27,37 @@ body{
     src: url("assets/SUSHI-Stroke.otf");
 }
 
-.container div{
-    width: 600px;
-    height: 400px;
+body{
+    background-color: rgb(39, 39, 39);
+    overflow-x: hidden;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#decimal, #octal, #hexadecimal, #binario{
+    width: 35%;
+    height: 250px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     padding: 20px;
 }
-
-#decimal div, #octal div, #hexadecimal div, #binario div{
-    font-size: 80px;
-    width: 30%;
-    overflow:scroll;
+#decimal input, #octal input, #hexadecimal input, #binario input{
+    margin: 10px 0;
 }
+#decimal div, #octal div, #hexadecimal div, #binario div{
+    font-size: 60px;
+    width: 90%;
+    text-align: center;
+}
+.demo{
+    height: 40px !important;
+    a;
+}
+
 #decimal{
     background-image: url("assets/mario bg.jpg");
     background-size: cover;
@@ -59,7 +66,6 @@ body{
 }
 #decimal input{
     border: none;
-    margin: 10px 0 0 0;
     font-family:Mario;
     height: 10%;
     width: 80%;
@@ -89,7 +95,6 @@ body{
 }
 #octal input{
     border: none;
-    margin: 10px 0 0 0;
     font-family:Mania;
     height: 10%;
     width: 80%;
@@ -121,7 +126,7 @@ body{
     border: none;
     font-family:DK;
     color: rgb(187, 140, 23);
-    font-size: 32px;
+    font-size: 30px;
     width: 90%;
     text-align: center;
 }
@@ -164,12 +169,12 @@ body{
     font-family:"Sushi Stroke";
     font-size: 100px;
     font-weight: 100;
+    margin: 0px;
+    margin-top: 10px;
     color: white;
     text-shadow: -1px -1px 0 lightskyblue,-1px 1px 0 lightskyblue,1px -1px 0 lightskyblue,1px 1px 0 lightskyblue;
-    margin: 0;
 }
 #binario input{
-    margin-top: 30px;
     border: none;
     background-color: transparent;
     font-family: DK;
@@ -184,7 +189,6 @@ body{
     opacity: 100%;
 }
 .btnKong{
-    margin: 15px 0;
     border: none;
     background-color: transparent;
     color: red;
@@ -193,19 +197,6 @@ body{
     font-size: 30px;
     cursor: pointer;
 }
-#sectionBin{
-    display:flex;
-    flex-direction: row;
-}
-#sectionBin div{
-    width: fit-content;
-    overflow: hidden;
-}
-
-.demo{
-    height: 40px !important;
-}
-
 
 .char{
     height: 100px;
@@ -226,9 +217,6 @@ body{
 #sonic{
     bottom: 20px;
 }
-#ryu{
-    height: 500px;
-}
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-2px, -1px) rotate(-1deg); }
@@ -243,6 +231,7 @@ body{
     100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
 #dk{
-    top: -285px;
+    height: 60px;
+    top: -279px;
     right: 200px;
 }
