@@ -27,6 +27,14 @@ body{
     font-family: DK;
     src: url("assets/kong font.ttf");
 }
+@font-face {
+    font-family: Jumpman;
+    src: url("assets/Jumpman.ttf");
+}
+@font-face {
+    font-family: "Sushi Stroke";
+    src: url("assets/SUSHI-Stroke.otf");
+}
 
 .container div{
     width: 600px;
@@ -40,6 +48,8 @@ body{
 
 #decimal div, #octal div, #hexadecimal div, #binario div{
     font-size: 80px;
+    width: 30%;
+    overflow:scroll;
 }
 #decimal{
     background-image: url("assets/mario bg.jpg");
@@ -101,9 +111,10 @@ body{
 }
 #hexadecimal h2, #hexadecimal div{
     background:linear-gradient(rgb(219, 255, 12),rgb(211, 62, 4));
-    text-shadow:2px 2px black;
+    text-shadow:2px 2px rgba(0, 0, 0);
     -webkit-background-clip:text;
     -webkit-text-fill-color: transparent;
+    font-size: 40px;
 }
 #hexadecimal input{
     background: rgba(255, 255, 255, 0.521);
@@ -131,8 +142,8 @@ body{
 }
 #comboBar{
     position: absolute;
-    top:50%;
-    left: 30%;
+    top:65%;
+    left: 25%;
     z-index: 10;
     width: 30%;
     font-size: 25px !important;
@@ -150,10 +161,45 @@ body{
     color: white;
 }
 #binario h2{
-    margin: 600px;
+    font-family:"Sushi Stroke";
+    font-size: 100px;
+    font-weight: 100;
+    color: white;
+    text-shadow: -1px -1px 0 lightskyblue,-1px 1px 0 lightskyblue,1px -1px 0 lightskyblue,1px 1px 0 lightskyblue;
+    margin: 0;
 }
 #binario input{
-    margin-top: 200px;
+    margin-top: 30px;
+    border: none;
+    background-color: transparent;
+    font-family: DK;
+    font-size: 25px;
+    width: 70%;
+    text-align: center;
+    color: white;
+}
+#binario input::placeholder{
+    color: rgb(145, 61, 28);
+    text-shadow: -0.5px -0.5px 0 lightskyblue,-1px 1px 0 lightskyblue,1px -1px 0 lightskyblue,1px 1px 0 lightskyblue;
+    opacity: 100%;
+}
+.btnKong{
+    margin: 15px 0;
+    border: none;
+    background-color: transparent;
+    color: red;
+    text-shadow: -1px -1px 0 yellow,-1px 1px 0 yellow,1px -1px 0 yellow,1px 1px 0 yellow;
+    font-family: "Jumpman";
+    font-size: 30px;
+    cursor: pointer;
+}
+#sectionBin{
+    display:flex;
+    flex-direction: row;
+}
+#sectionBin div{
+    width: fit-content;
+    overflow: hidden;
 }
 
 .demo{
@@ -175,7 +221,7 @@ body{
     100%{left:0px}
 }
 #mario{
-    top: 35px;
+    top: 15px;
 }
 #sonic{
     bottom: 20px;
@@ -197,6 +243,6 @@ body{
     100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
 #dk{
-    top: -225px;
+    top: -285px;
     right: 200px;
 }
