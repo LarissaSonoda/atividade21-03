@@ -13,112 +13,113 @@
 <body>
         <div class="container">
                 <div id="decimal">
-                        <h3 style="margin: 0 auto;">Decimal</h3>
-                        <input id="demo1" type="text" placeholder="digite o valor em decimal">
+                        <h3 style="margin: 0 auto;">decimal</h3>
+                        <input id="ipt_dec" type="text" placeholder="digite o valor em decimal">
                         <br><br>
-                        <button onclick="converter()" id="btn_Convert">Converter</button>
+                        <button onclick="converter_dec()" id="btn_Convert" class="btn_Convert btnMario">converter</button>
                         <br>
+                        <div id="demo1" class="demo"></div>
                         <img onclick="clickMario()" class="char" id="mario" src="assets/mario.gif">
-                        <div id="bin_result"></div>
                 </div>
 
 
                 <div id="octal">
-                        <h2 style="margin: 0 auto; color: #fff;">Octal</h2>
-                        <input placeholder="Digite um valor octal" id="ipt_octal">
-                        <br><br>
-                        <button onclick="converter_octal()" id="btn_Convert">converter</button>
                         <br>
-                        <div id="demo2"></div>
+                        <h2 style="margin: 0 auto;">Octal</h2>
+                        <input placeholder="Digite um valor Octal" id="ipt_octal">
+                        <button onclick="converter_octal()" id="btn_Convert" class="btn_Convert btnSonic">
+                                <canvas id="drawSonic"></canvas>
+                        </button>
+                        <div id="demo2" class="demo"></div>
                         <img onclick="clickSonic()" class="char" id="sonic" src="assets/sonic.gif">
                 </div>
 
                 <div id="hexadecimal">
                         <h2 style="margin: 0 auto;">Hexadecimal</h2>
-                        <br><br>
-                        <input placeholder="Digite um valor Hexadecimal" id="ipt_hex">
-                        <br><br>
-                        <button onclick="converter_hex()" id="btn_Convert">converter</button>
                         <br>
-                        <div id="demo3"></div>
+                        <input placeholder="Digite  um  valor  Hexadecimal" id="ipt_hex">
+                        <br><br>
+                        <button onclick="converter_hex()" id="btn_Convert" class="btn_Convert btnRyu">converter</button>
+                        <div id="demo3" class="demo"></div>
                         <img onclick="clickRyu()" class="char" id="ryu" src="assets/ryu.gif">
+                        <div id="comboBar"><span id="comboCount"></span>golpes</div>
                 </div>
 
                 <div id="binario">
                         <h2 style="margin: 0 auto;">Binario</h2>
-                        <br><br>
                         <input placeholder="Digite um valor Binário" id="ipt_bin">
                         <br><br>
-                        <button onclick="converter_bin()" id='btn_Convert'>converter</button>
-                        <br>
-                        <div id="demo4"></div>
+                        <button onclick="converter_bin()" id="btn_Convert" class="btn_Convert btnKong">converter</button>
+                        <div id="demo4" class="demo"></div>
                         <img onclick="clickDK()" class="char" id="dk" src="assets/kong.png">
                 </div>
         </div>
         <script>
-                function converter_bin() {
-                        var bin = ipt_bin.value;
-                        var binResult = parseInt(bin, 2);
+                var demo1 = document.getElementById("demo1");
+                var demo2 = document.getElementById("demo2");
+                var demo3 = document.getElementById("demo3");
+                var demo4 = document.getElementById("demo4");
+                function mostrarResultados(decimal,octal,hex,bin){
+                        demo1.innerHTML = ` ${decimal}`;
+                        demo2.innerHTML = ` ${octal}`;
+                        demo3.innerHTML = ` ${hex}`;
+                        demo4.innerHTML = ` ${bin}`;
+                }
+                function limparValores(){
+                        demo1.value = null;
+                        demo2.value = null;
+                        demo3.value = null;
+                        demo4.value = null;
+                }
+                function converter_dec() {
+                        var decimal = Number(ipt_dec.value);
+                        
+                        let octal = decimal.toString(8);
+                        let hex = decimal.toString(16).toUpperCase();
+                        let bin = decimal.toString(2);
 
-                        var decimal = binResult.toString(10);
-                        var hex = binResult.toString(16);
-                        var octal = binResult.toString(8);
-                        document.getElementById('bin_result').innerHTML = `${decimal}`;
-                        document.getElementById('demo2').innerHTML = `${octal}`;
-                        document.getElementById('demo3').innerHTML = `${hex}`;
-                        document.getElementById("demo4").innerHTML = ` ${bin}`;
+                        mostrarResultados(decimal,octal,hex,bin);
+                        limparValores();
 
-
+                        btn_Convert.style = "background-color:rgb(131, 95, 3);color:lightgrey;";
+                        var sfx = new Audio("assets/coin.mp3");
+                        sfx.volume = 0.2;
+                        sfx.play();
                 }
                 function converter_octal() {
-                        var octal = ipt_octal.value;
+                        var octal = Number(ipt_octal.value);
                         var octalResult = parseInt(octal, 8);
 
                         var decimal = octalResult.toString(10);
                         var bin = octalResult.toString(2);
                         var hex = octalResult.toString(16);
-                        document.getElementById("bin_result").innerHTML = ` ${decimal}`;
-                        document.getElementById("demo2").innerHTML = ` ${octal}`;
-                        document.getElementById("demo3").innerHTML = ` ${hex}`;
-                        document.getElementById("demo4").innerHTML = ` ${bin}`;
+                        mostrarResultados(decimal,octal,hex,bin);
+                        limparValores();
 
+                        var sfx = new Audio("assets/ring.wav");
+                        sfx.volume = 0.2;
+                        sfx.play();
                 }
-
                 function converter_hex() {
-                        var hex = ipt_hex.value;
+                        var hex = Number(ipt_hex.value);
                         var hexadecimal = parseInt(hex, 16);
 
                         var decimal = hexadecimal.toString(10);
                         var bin = hexadecimal.toString(2);
-                        var hex = hexadecimal.toString(16);
-                        document.getElementById("bin_result").innerHTML = ` ${decimal}`;
-                        document.getElementById("demo2").innerHTML = ` ${octal}`;
-                        document.getElementById("demo3").innerHTML = ` ${hex}`;
-                        document.getElementById("demo4").innerHTML = ` ${bin}`;
+                        var octal = hexadecimal.toString(8);
+                        mostrarResultados(decimal,octal,hex,bin);
+                        limparValores();
                 }
+                function converter_bin() {
+                        var bin = Number(ipt_bin.value);
+                        var binResult = parseInt(bin, 2);
 
-                function converter() {
-
-                        var decimal = Number(demo1.value);
-
-                        let octal = decimal.toString(8);
-
-                        let hexadecimal = decimal.toString(16);
-
-                        let binaria = decimal.toString(2);
-
-                        console.log(decimal);
-                        console.log(octal);
-                        console.log(hexadecimal);
-                        console.log(binaria);
-
-                        document.getElementById("demo1").innerHTML = ` ${decimal}`;
-                        document.getElementById("demo2").innerHTML = ` ${octal}`;
-                        document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
-                        document.getElementById("demo4").innerHTML = ` ${binaria}`;
-
+                        var decimal = binResult.toString(10);
+                        var hex = binResult.toString(16);
+                        var octal = binResult.toString(8);
+                        mostrarResultados(decimal,hex,octal,bin);
+                        limparValores();
                 }
-
                 function aparecer_bin() {
                         demo4.style.display = 'block'
                 }
@@ -135,29 +136,111 @@
                 var sonic = document.getElementById("sonic");
                 var ryu = document.getElementById("ryu");
                 var dk = document.getElementById("dk");
-                function clickMario(){
-                        var sfx =  new Audio("assets/mario sfx.mp3");
+                function clickMario() {
+                        var sfx = new Audio("assets/mario sfx.mp3");
                         sfx.play();
+                        sfx.volume = 0.5;
                         mario.src = "assets/mario click.gif";
-                        setTimeout(()=>mario.src = "assets/mario.gif",2000);
+                        mario.style = "animation-name:run;animation-duration:5s";
+                        setTimeout(() => { mario.style = "animation-name:none;"; }, 5000);
+                        setTimeout(() => { mario.src = "assets/mario.gif"; }, 2000);
                 }
-                function clickSonic(){
-                        var sfx =  new Audio("assets/sonic sfx.mp3");
+                function clickSonic() {
+                        var sfx = new Audio("assets/sonic sfx.wav");
                         sfx.play();
                         sonic.src = "assets/sonic click.gif";
-                        setTimeout(()=>sonic.src = "assets/sonic.gif",500);
+                        sonic.style = "bottom:90px;transition:0.5s";
+                        setTimeout(() => { sonic.src = "assets/sonic.gif"; sonic.style = "transition:0.5s;bottom:20px" }, 500);
                 }
-                function clickRyu(){
-                        var sfx =  new Audio("assets/ryu sfx.mp3");
-                        sfx.play();
-                        ryu.src = "assets/ryu click.gif";
-                        setTimeout(()=>ryu.src = "assets/ryu.gif",1000);
+                var canvas = document.getElementById("drawSonic");
+                canvas.style = "width:200px;height:100px"
+                var ctx = canvas.getContext("2d");
+
+                var fill = "black";
+                var secondaryFill = "red";
+                var textFill = "white";
+                var lineWidth = 0;
+                desenharSonic(canvas, ctx, fill, secondaryFill, textFill, lineWidth);
+                function desenharSonic(canvas, ctx, fill, secondaryFill, textFill, lineWidth) {
+                        var font = new FontFace("Mania", "url(assets/PenumbraSansStd-Bold.otf)");
+                        font.load().then(function (font) {
+                                document.fonts.add(font);
+                                console.log('Font loaded');
+
+                                ctx.beginPath();
+                                ctx.translate(-10, -10);
+                                ctx.moveTo(160.9, 145.0);
+                                ctx.lineTo(2.0, 145.0);
+                                ctx.lineTo(81.6, 100.0);
+                                ctx.lineTo(300, 100.0);235,2
+                                ctx.lineTo(200, 145.0);
+                                ctx.closePath();
+                                ctx.fillStyle = secondaryFill;
+                                ctx.fill();
+                                ctx.lineWidth = lineWidth;
+                                ctx.stroke();
+
+                                ctx.beginPath();
+                                ctx.translate(-10, -10);
+                                ctx.moveTo(160.9, 145.0);
+                                ctx.lineTo(2.0, 145.0);
+                                ctx.lineTo(81.6, 100.0);
+                                ctx.lineTo(300, 100.0);235,2
+                                ctx.lineTo(200, 145.0);
+                                ctx.closePath();
+                                ctx.fillStyle = fill;
+                                ctx.fill();
+                                ctx.lineWidth = lineWidth;
+                                ctx.stroke();
+
+                                ctx.fillStyle = textFill;
+                                ctx.font = "30px Mania";
+                                ctx.fillText("Converter", 50, 122);
+                        });
                 }
-                function clickDK(){
-                        var sfx =  new Audio("assets/kong sfx.mp3");
+
+                var combo = 0;
+                var comboBar = document.getElementById("comboBar");
+                var comboCount = document.getElementById("comboCount");
+                function clickRyu() {
+                        if (combo == 0) {
+                                var sfx = new Audio("assets/ryu sfx.mp3");
+                                sfx.play();
+                                ryu.src = "assets/ryu click.gif";
+                                setTimeout(() =>{
+                                        var sfx = new Audio("assets/1.mp3");
+                                        sfx.play();
+                                        ryu.src = "assets/ryu.gif"
+                                }, 1000);
+                                comboBar.style="visibility:visible;";
+
+                                combo = 1;
+                        }
+                        else if (combo == 1) {
+                                var sfx = new Audio("assets/ryu sfx2.mp3");
+                                sfx.play();
+                                ryu.src = "assets/ryu click2.gif";
+                                setTimeout(() =>{
+                                        var sfx = new Audio("assets/2.mp3");
+                                        sfx.play();
+                                        ryu.src = "assets/ryu.gif"
+                                }, 1500);
+                                combo = 2;
+                                setTimeout(() =>{
+                                        comboBar.style="opacity:0%;transition:2s";
+                                },2000);
+                        }
+                        comboCount.innerHTML = combo;
+                }
+                function clickDK() {
+                        var sfx = new Audio("assets/kong sfx.mp3");
                         sfx.play();
                         dk.src = "assets/kong click.gif";
-                        setTimeout(()=>dk.src = "assets/kong.png",2500);
+                        document.body.style = "animation: shake 3s;"
+                        setTimeout(() => {
+                                dk.src = "assets/kong.png";
+                                document.body.style = "animation:none";
+                        }, 2500);
                 }
         </script>
 </body>

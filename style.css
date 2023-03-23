@@ -1,5 +1,5 @@
 body{
-    background-color: black;
+    background-color: rgb(39, 39, 39);
 }
 .container{
     display: flex;
@@ -14,6 +14,10 @@ body{
 @font-face {
     font-family: Sonic;
     src: url("assets/sonic font.TTF");
+}
+@font-face {
+    font-family: Mania;
+    src: url("assets/PenumbraSansStd-Bold.otf");
 }
 @font-face {
     font-family: SF;
@@ -35,8 +39,7 @@ body{
 }
 
 #decimal div, #octal div, #hexadecimal div, #binario div{
-    color: white;
-    font-size: 80px !important;
+    font-size: 80px;
 }
 #decimal{
     background-image: url("assets/mario bg.jpg");
@@ -50,12 +53,18 @@ body{
     font-family:Mario;
     height: 10%;
     width: 80%;
+    padding: 5px 10px;
 }
-#btn_Convert{
+.btnMario{
     padding: 2%;
     background-color: goldenrod;
-    border: none;
-    border-radius: 8%;
+    border: solid white;
+    border-width: 2.5px 0 0 2.5px;
+    outline: solid black 2.5px;
+    font-family: Mario;
+    color: white;
+    text-shadow: 2px 2px black;
+    cursor: pointer;
 }
 
 #octal{
@@ -64,22 +73,100 @@ body{
     background-position: bottom;
     font-family: Sonic;
 }
+#octal h2, #octal div{
+    color: goldenrod;
+    text-shadow: -1px -1px 0 blue,-1px 1px 0 blue,1px -1px 0 blue,1px 1px 0 blue;
+}
+#octal input{
+    border: none;
+    margin: 10px 0 0 0;
+    font-family:Mania;
+    height: 10%;
+    width: 80%;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 22px;
+}
+.btnSonic{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 #hexadecimal{
     background-image: url("assets/ryu bg.jpg");
     background-size: cover;
     background-position: bottom;
     font-family: SF;
 }
+#hexadecimal h2, #hexadecimal div{
+    background:linear-gradient(rgb(219, 255, 12),rgb(211, 62, 4));
+    text-shadow:2px 2px black;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}
+#hexadecimal input{
+    background: rgba(255, 255, 255, 0.521);
+    border: none;
+    font-family:DK;
+    color: rgb(187, 140, 23);
+    font-size: 32px;
+    width: 90%;
+    text-align: center;
+}
+#hexadecimal input::placeholder{
+    color: blue;
+    opacity: 0.8;
+    border: solid 1px blue; 
+    outline: solid 1px white;
+}
+.btnRyu{
+    border: none;
+    font-size: 38px;
+    font-family: DK;
+    background: -webkit-linear-gradient(#f7ed95,red,#d573d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+#comboBar{
+    position: absolute;
+    top:50%;
+    left: 30%;
+    z-index: 10;
+    width: 30%;
+    font-size: 25px !important;
+    visibility: hidden;
+}
+#comboCount{
+    font-size: 60px !important;
+}
+
 #binario{
     background-image: url("assets/kong bg.jpg");
     background-size: cover;
     background-position: center;
     font-family: DK;
+    color: white;
 }
+
+.demo{
+    height: 40px !important;
+}
+
+
 .char{
     height: 100px;
     position: relative;
     cursor: pointer;
+}
+@keyframes run{
+    0% {left:0px}
+    50% {left:1100px;opacity: 100%;}
+    51%{opacity: 0%;}
+    75%{left:-1000px;opacity: 0%;}
+    80%{opacity: 100%;}
+    100%{left:0px}
 }
 #mario{
     top: 35px;
@@ -90,7 +177,20 @@ body{
 #ryu{
     height: 500px;
 }
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-2px, -1px) rotate(-1deg); }
+    20% { transform: translate(-2px, 0px) rotate(1deg); }
+    30% { transform: translate(2px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-2px, 1px) rotate(0deg); }
+    70% { transform: translate(2px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
 #dk{
-    bottom: 285px;
-    right: 100px;
+    top: -225px;
+    right: 200px;
 }
