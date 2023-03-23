@@ -149,6 +149,12 @@ body{
     font-family: DK;
     color: white;
 }
+#binario h2{
+    margin: 600px;
+}
+#binario input{
+    margin-top: 200px;
+}
 
 .demo{
     height: 40px !important;
