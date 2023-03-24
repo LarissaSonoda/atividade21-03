@@ -109,7 +109,8 @@ body{
 }
 
 #hexadecimal{
-    background-image: url("assets/ryu bg.jpg");
+    background-image:none;
+    background-color: blue;
     background-size: cover;
     background-position: bottom;
     font-family: SF;
@@ -126,7 +127,8 @@ body{
     border: none;
     font-family:DK;
     color: rgb(187, 140, 23);
-    font-size: 30px;
+    text-shadow: -1px -1px 0 black,-1px 1px 0 black,1px -1px 0 black,1px 1px 0 black;
+    font-size: 25px;
     width: 90%;
     text-align: center;
 }
@@ -145,10 +147,27 @@ body{
     -webkit-text-fill-color: transparent;
     cursor: pointer;
 }
+#plane{
+    position: absolute;
+    z-index: 5;
+    rotate: 135deg;
+    width: 30px;
+    bottom: 120px;
+    left: 400px;
+}
+#worldmap{
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+}
+@keyframes fly{
+    0%{}
+    100%{left: 465px;bottom: 65px;}
+}
 #comboBar{
     position: absolute;
     top:65%;
-    left: 25%;
+    left: 0%;
     z-index: 10;
     width: 30%;
     font-size: 25px !important;
@@ -196,6 +215,7 @@ body{
     font-family: "Jumpman";
     font-size: 30px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .char{
@@ -217,6 +237,9 @@ body{
 #sonic{
     bottom: 20px;
 }
+#ryu{
+    display:none;
+}
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-2px, -1px) rotate(-1deg); }
@@ -232,6 +255,6 @@ body{
   }
 #dk{
     height: 60px;
-    top: -279px;
-    right: 200px;
+    top: -205px;
+    right: 160px;
 }

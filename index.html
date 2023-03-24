@@ -36,6 +36,8 @@
                         <input placeholder="Digite  um  valor  Hexadecimal" id="ipt_hex">
                         <button onclick="converter_hex()" id="btn_Convert" class="btn_Convert btnRyu">converter</button>
                         <div id="demo3" class="demo"></div>
+                        <img src="assets/plane.gif" id="plane">
+                        <img onclick="clickMap()" src="assets/worldmap.png" id="worldmap">
                         <img onclick="clickRyu()" class="char" id="ryu" src="assets/ryu.gif">
                         <div id="comboBar"><span id="comboCount"></span>golpes</div>
                 </div>
@@ -103,6 +105,9 @@
                         var octal = hexadecimal.toString(8);
                         mostrarResultados(decimal,octal,hex,bin);
                         limparValores();
+
+                        var sfx = new Audio("assets/sf start.wav");
+                        sfx.play();
                 }
                 function converter_bin() {
                         var bin = Number(ipt_bin.value);
@@ -113,17 +118,9 @@
                         var octal = binResult.toString(8);
                         mostrarResultados(decimal,hex,octal,bin);
                         limparValores();
-                }
-                function aparecer_bin() {
-                        demo4.style.display = 'block'
-                }
 
-                function aparecer_hexa() {
-                        demo3.style.display = 'block'
-                }
-
-                function aparecer_octal() {
-                        demo2.style.display = 'block'
+                        var sfx = new Audio("assets/howhigh.wav");
+                        sfx.play();
                 }
 
                 var mario = document.getElementById("mario");
@@ -193,6 +190,28 @@
                         });
                 }
 
+                function clickMap(){
+                        plane.style = "z-index:20;animation-name:fly;animation-duration:2s";
+                        var sfx = new Audio("assets/sf plane.wav");
+                        sfx.volume = 0.5;
+                        sfx.play();
+                        setTimeout(() =>{
+                                plane.style="opacity:0;transition:0.7s";
+                                worldmap.style="opacity:0;transition:0.7s;";
+                                var sfx = new Audio("assets/sf brazil.mp3");
+                                sfx.volume = 0.5;
+                                sfx.play();
+                        },1300);
+                        setTimeout(() =>{
+                                plane.style="display:none";
+                                worldmap.style="display:none";
+                                hexadecimal.style = "background-image:url('assets/ryu bg.jpg')";
+                                ryu.style = "display:block";
+                                var sfx = new Audio("assets/sf fight.wav");
+                                sfx.volume = 0.5;
+                                sfx.play();
+                        },2000)
+                }
                 var combo = 0;
                 var comboBar = document.getElementById("comboBar");
                 var comboCount = document.getElementById("comboCount");
@@ -203,6 +222,7 @@
                                 ryu.src = "assets/ryu click.gif";
                                 setTimeout(() =>{
                                         var sfx = new Audio("assets/1.mp3");
+                                        sfx.volume = 0.5;
                                         sfx.play();
                                         ryu.src = "assets/ryu.gif"
                                 }, 1000);
@@ -216,18 +236,22 @@
                                 ryu.src = "assets/ryu click2.gif";
                                 setTimeout(() =>{
                                         var sfx = new Audio("assets/2.mp3");
+                                        sfx.volume = 0.5;
                                         sfx.play();
-                                        ryu.src = "assets/ryu.gif"
+                                        ryu.src = "assets/ryu.gif";
                                 }, 1500);
                                 combo = 2;
                                 setTimeout(() =>{
-                                        comboBar.style="opacity:0%;transition:2s";
-                                },2000);
+                                        comboBar.style="opacity:0%;transition:3s";
+                                        var sfx = new Audio("assets/sf perfect.mp3");
+                                        sfx.play();
+                                },3000);
                         }
                         comboCount.innerHTML = combo;
                 }
                 function clickDK() {
                         var sfx = new Audio("assets/kong sfx.mp3");
+                        sfx.volume = 0.5;
                         sfx.play();
                         dk.src = "assets/kong click.gif";
                         document.body.style = "animation: shake 3s;"
